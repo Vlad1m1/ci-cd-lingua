@@ -1,16 +1,18 @@
-import { useState } from "react";
-
 import {Button, Typography} from "@maxhub/max-ui";
 
-import PopupPageBase from "../../components/PopupPageBase/PopupPageBase";
+import {usePopup} from "../../contexts/PopupContext";
+import NestedPage from "../NestedPage/NestedPage";
 
 import styles from "./DetailPage.module.scss";
 
-
 // сгенерировано чатом жпт, НЕ ИСПОЛЬЗОВАТЬ В КАЧЕСТВЕ РЕФЕРЕНСА!!!
 const DetailPage = () => {
-	const [isInfoOpen, setIsInfoOpen] = useState(false);
-
+	const { openPopup } = usePopup();
+	
+	const handleOpenPopup = () => {
+		openPopup(<NestedPage/>);
+	};
+	
 	return (
 		<>
 			<div className={styles.page}>
@@ -45,7 +47,7 @@ const DetailPage = () => {
 							</div>
 							<Button
 								className={styles.button}
-								onClick={() => setIsInfoOpen(true)}
+								onClick={handleOpenPopup}
 							>
 								Открыть вложенный popup
 							</Button>
@@ -63,33 +65,6 @@ const DetailPage = () => {
 					</div>
 				</div>
 			</div>
-
-			<PopupPageBase isOpen={isInfoOpen} onClose={() => setIsInfoOpen(false)}>
-				<div className={styles.page}>
-					<div className={styles.container}>
-						<div className={styles.title}>
-							<Typography.Headline variant="large-strong">Вложенный Popup</Typography.Headline>
-						</div>
-						<div className={styles.description}>
-							<Typography.Body variant="medium">
-								Это вложенный popup поверх DetailPage. BackButton работает автоматически!
-							</Typography.Body>
-						</div>
-						<div className={styles.content}>
-							<div className={styles.card}>
-								<div className={styles.cardTitle}>
-									<Typography.Headline variant="medium-strong">История навигации</Typography.Headline>
-								</div>
-								<div className={styles.cardText}>
-									<Typography.Body variant="medium">
-										useHistory отслеживает все открытые окна и автоматически управляет BackButton.
-									</Typography.Body>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</PopupPageBase>
 		</>
 	);
 };

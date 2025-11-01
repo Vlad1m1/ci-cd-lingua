@@ -2,16 +2,16 @@ import { usePopup } from "../../contexts/PopupContext";
 import PopupPageBase from "../PopupPageBase/PopupPageBase";
 
 const PopupContainer = () => {
-	const { isOpen, closePopup, content } = usePopup();
-
-	if (!content) {
-		return null;
-	}
+	const { popups, closePopup } = usePopup();
 
 	return (
-		<PopupPageBase isOpen={isOpen} onClose={closePopup}>
-			{content}
-		</PopupPageBase>
+		<>
+			{popups.map((popup) => (
+				<PopupPageBase key={popup.id} isOpen={popup.isOpen} onClose={closePopup}>
+					{popup.content}
+				</PopupPageBase>
+			))}
+		</>
 	);
 };
 

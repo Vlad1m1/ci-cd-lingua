@@ -1,0 +1,29 @@
+.devNotifications {
+	position: fixed;
+	top: 60px;
+	right: 10px;
+	z-index: 10001;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	pointer-events: none;
+
+	.devNotification {
+		background: rgba(0, 0, 0, 0.85);
+		color: #fff;
+		padding: 12px 16px;
+		border-radius: 8px;
+		font-size: 14px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+		opacity: 0;
+		transform: translateX(20px);
+		transition: opacity 0.3s, transform 0.3s;
+		max-width: 250px;
+		word-wrap: break-word;
+
+		&.visible {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}

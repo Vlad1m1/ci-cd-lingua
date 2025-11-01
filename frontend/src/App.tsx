@@ -5,6 +5,9 @@ import PopupContainer from "./components/PopupContainer/PopupContainer";
 import TabNavigator from "./components/TabNavigator/TabNavigator";
 import { tabsConfig } from "./config/tabsConfig";
 import { PopupProvider } from "./contexts/PopupContext";
+import DevWrapper from "./components/DEVELOPMENT/DevWrapper/DevWrapper";
+
+const isDev = import.meta.env.DEV;
 
 function App() {
 	const [showLoader, setShowLoader] = useState(true);
@@ -25,13 +28,15 @@ function App() {
 		setShowLoader(false);
 	};
 
-	return (
+	const appContent = (
 		<PopupProvider>
 			<TabNavigator tabs={tabsConfig} defaultTabId="puzzle" />
-			{showLoader && <Loader ref={loaderRef} onComplete={handleLoaderComplete} />}
 			<PopupContainer />
+			{showLoader && <Loader ref={loaderRef} onComplete={handleLoaderComplete} />}
 		</PopupProvider>
 	);
+
+	return isDev ? <DevWrapper>{appContent}</DevWrapper> : appContent;
 }
 
 export default App;

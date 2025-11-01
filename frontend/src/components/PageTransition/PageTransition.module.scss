@@ -7,11 +7,16 @@
 	background: rgba(0, 0, 0, 0);
 	z-index: 9999;
 	transition: background 0.4s ease;
-	
+
 	&.active {
 		background: rgba(0, 0, 0, 0.3);
 	}
 }
+
+:global(.dev) .overlay {
+  top: var(--dev-header-height);
+}
+
 
 .page {
 	position: absolute;
@@ -23,7 +28,7 @@
 	transform: translateY(100%);
 	transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
 	overflow-y: auto;
-	
+
 	&.active {
 		transform: translateY(0);
 	}

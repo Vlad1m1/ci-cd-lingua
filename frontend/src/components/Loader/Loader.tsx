@@ -61,7 +61,15 @@ const Loader = forwardRef<LoaderRef, LoaderProps>((
 	}, [isIntroComplete]);
 
 	const handleExit = () => {
+		if (isMustExit.current) return;
 		isMustExit.current = true;
+		
+		if (isIntroComplete) {
+			setIsExiting(true);
+			setTimeout(() => {
+				onComplete?.();
+			}, EXITING_ANIMATION_DURATION);
+		}
 	};
 	
 	const onSectionAnimationEnd =() => {
