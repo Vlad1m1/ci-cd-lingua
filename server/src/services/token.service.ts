@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { config } from '../config';
 import logger from '../utils/logger';
-import { addTimeToCurrentDate } from '../utils/addTimeStringToDate';
+import { addTimeStringToDate } from '../utils/addTimeStringToDate';
 import { TokenDTO } from '../dtos/token.dto';
 import { ApiError } from '../error/apiError';
 import { UserTokens } from '../models';
@@ -61,7 +61,7 @@ class TokenService {
 		await UserTokens.create({
 			userId: userId,
 			token: refreshToken,
-			expiredAt: addTimeToCurrentDate(new Date(), config.auth.jwtRefreshExpiresIn)
+			expiredAt: addTimeStringToDate(new Date(), config.auth.jwtRefreshExpiresIn)
 		});
 	}
 

@@ -1,4 +1,4 @@
-export function addTimeToCurrentDate(date: Date, timeString: string): Date {
+export function addTimeStringToDate(date: Date, timeString: string): Date {
 	const result = new Date(date);
   
 	const regex = /(\d+)([smhd])/g;

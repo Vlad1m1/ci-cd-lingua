@@ -6,7 +6,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /auth/login:
+ * /api/auth/login:
  *   post:
  *     tags:
  *       - Authentication
@@ -47,7 +47,7 @@ router.post('/login', authController.login);
 
 /**
  * @openapi
- * /auth/refresh:
+ * /api/auth/refresh:
  *   post:
  *     tags:
  *       - Authentication
@@ -73,7 +73,7 @@ router.post('/refresh', authController.refresh);
 
 /**
  * @openapi
- * /auth/logout:
+ * /api/auth/logout:
  *   post:
  *     tags:
  *       - Authentication
@@ -95,7 +95,7 @@ router.post('/logout', authController.logout);
 
 /**
  * @openapi
- * /auth/me:
+ * /api/auth/me:
  *   get:
  *     tags:
  *       - Authentication
