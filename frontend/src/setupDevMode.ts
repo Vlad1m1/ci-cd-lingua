@@ -1,4 +1,4 @@
-import { createMockWebAppAPI } from "./components/DEVELOPMENT/mockWebAppAPI";
+import { createMockWebAppAPI } from "@components/development/mockWebAppAPI";
 
 let notificationHandler: ((message: string, duration: number) => void) | null = null;
 let backButtonChangeHandler: ((isVisible: boolean) => void) | null = null;

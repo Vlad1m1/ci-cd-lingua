@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 
 import { useHistory } from "@hooks/useHistory";
-import PageTransition from "@components/PageTransition/PageTransition";
+import PageTransition from "@components/PageTransition";
 
 interface PopupPageBaseProps {
   isOpen: boolean;

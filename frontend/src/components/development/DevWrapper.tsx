@@ -1,14 +1,14 @@
 import { useEffect, useState, ReactNode } from "react";
 
-import { setDevModeHandlers } from "../../../setupDevMode";
-import cls from "../../../utils/cls";
-import DevHeader from "../DevHeader/DevHeader";
+import { setDevModeHandlers } from "../../setupDevMode";
+import cls from "@utils/cls";
+import DevHeader from "./DevHeader";
 import DevNotifications, {
 	type DevNotification,
-} from "../DevNotifications/DevNotifications";
-import { triggerBackButtonCallbacks } from "../mockWebAppAPI";
+} from "./DevNotifications";
+import { triggerBackButtonCallbacks } from "./mockWebAppAPI";
 
-import styles from "./DevWrapper.module.scss";
+import styles from "@styles/components/development/DevWrapper.module.scss";
 
 
 interface DevWrapperProps {

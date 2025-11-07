@@ -1,4 +1,4 @@
-import styles from "./DevHeader.module.scss";
+import styles from "@styles/components/development/DevHeader.module.scss";
 
 interface DevHeaderProps {
 	showBackButton: boolean;

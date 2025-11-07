@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 
-import styles from "./PageTransition.module.scss";
+import styles from "@styles/components/PageTransition.module.scss";
 
 interface PageTransitionProps {
 	isOpen: boolean;

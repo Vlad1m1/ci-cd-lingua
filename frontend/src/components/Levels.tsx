@@ -1,6 +1,6 @@
 import React from 'react';
-import { LevelButton } from '@components/LevelButton/LevelButton';
-import styles from './Levels.module.scss';
+import { LevelButton } from '@components/LevelButton';
+import styles from '@styles/components/Levels.module.scss';
 
 export interface LevelItem {
   id: number | string;

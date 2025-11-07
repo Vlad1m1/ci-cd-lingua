@@ -3,7 +3,7 @@ import {CSSProperties, FC, useEffect, useRef} from "react";
 import {generateRandomArrayFromArray} from "@utils/generateRandomArrayFromArray";
 import {random} from "@utils/random";
 
-import styles from "./LanguagesBackground.module.scss";
+import styles from "@styles/components/LanguagesBackground.module.scss";
 import {GREETING_STRINGS} from "@constants/greetings";
 
 interface GreetingWord {

@@ -1,8 +1,8 @@
 import {FC, useCallback, useState} from "react";
 
-import LanguagesBackground from "@components/LanguagesBackground/LanguagesBackground";
-import {LanguageSelector} from "@components/LanguageSelector/LanguageSelector";
-import OnBoarding from "@components/OnBoarding/OnBoarding";
+import LanguagesBackground from "@components/LanguagesBackground";
+import {LanguageSelector} from "@components/LanguageSelector";
+import OnBoarding from "@components/OnBoarding";
 
 const popupInfoV1 = {
 	id: 1,
@@ -22,7 +22,28 @@ interface OwnProps {
 	onClose?: () => void;
 }
 
-const HelloAndSelectLanguagePopup: FC<OwnProps> = ({onClose}) => {
+const languages = [
+	{ code: "en", name: "English", emoji: "🇬🇧", disabled: true },
+	{ code: "ru", name: "Русский", emoji: "🇷🇺" },
+	{ code: "es", name: "Español", emoji: "🇪🇸" },
+	{ code: "en", name: "English", emoji: "🇬🇧" },
+	{ code: "ru", name: "Русский", emoji: "🇷🇺" },
+	{ code: "es", name: "Español", emoji: "🇪🇸" },
+	{ code: "en", name: "English", emoji: "🇬🇧" },
+	{ code: "ru", name: "Русский", emoji: "🇷🇺" },
+	{ code: "es", name: "Español", emoji: "🇪🇸" },
+	{ code: "en", name: "English", emoji: "🇬🇧" },
+	{ code: "ru", name: "Русский", emoji: "🇷🇺" },
+	{ code: "es", name: "Español", emoji: "🇪🇸" },
+	{ code: "en", name: "English", emoji: "🇬🇧" },
+	{ code: "ru", name: "Русский", emoji: "🇷🇺" },
+	{ code: "es", name: "Español", emoji: "🇪🇸" },
+	{ code: "en", name: "English", emoji: "🇬🇧" },
+	{ code: "ru", name: "Русский", emoji: "🇷🇺" },
+	{ code: "es", name: "Español", emoji: "🇪🇸" },
+];
+
+const HelloAndSelectLanguage: FC<OwnProps> = ({onClose}) => {
 	const [step, setStep] = useState<number>(1);
 	const [isFullScreen, setFullScreen] = useState(false);
 	
@@ -45,26 +66,7 @@ const HelloAndSelectLanguagePopup: FC<OwnProps> = ({onClose}) => {
 	
 	
 	const langSelector = <LanguageSelector
-		languages={[
-			{ code: "en", name: "English", emoji: "🇬🇧", disabled: true },
-			{ code: "ru", name: "Русский", emoji: "🇷🇺" },
-			{ code: "es", name: "Español", emoji: "🇪🇸" },
-			{ code: "en", name: "English", emoji: "🇬🇧" },
-			{ code: "ru", name: "Русский", emoji: "🇷🇺" },
-			{ code: "es", name: "Español", emoji: "🇪🇸" },
-			{ code: "en", name: "English", emoji: "🇬🇧" },
-			{ code: "ru", name: "Русский", emoji: "🇷🇺" },
-			{ code: "es", name: "Español", emoji: "🇪🇸" },
-			{ code: "en", name: "English", emoji: "🇬🇧" },
-			{ code: "ru", name: "Русский", emoji: "🇷🇺" },
-			{ code: "es", name: "Español", emoji: "🇪🇸" },
-			{ code: "en", name: "English", emoji: "🇬🇧" },
-			{ code: "ru", name: "Русский", emoji: "🇷🇺" },
-			{ code: "es", name: "Español", emoji: "🇪🇸" },
-			{ code: "en", name: "English", emoji: "🇬🇧" },
-			{ code: "ru", name: "Русский", emoji: "🇷🇺" },
-			{ code: "es", name: "Español", emoji: "🇪🇸" },
-		]}
+		languages={languages}
 		selectedLanguage="en"
 		onSelect={(code) => console.log(code)}
 	/>;
@@ -85,5 +87,5 @@ const HelloAndSelectLanguagePopup: FC<OwnProps> = ({onClose}) => {
 	);
 };
 
-export default HelloAndSelectLanguagePopup;
+export default HelloAndSelectLanguage;
 

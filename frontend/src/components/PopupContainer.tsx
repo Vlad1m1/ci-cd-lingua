@@ -1,5 +1,5 @@
 import { usePopup } from "@contexts/PopupContext";
-import PopupPageBase from "../PopupPageBase/PopupPageBase";
+import PopupPageBase from "./PopupPageBase";
 
 const PopupContainer = () => {
 	const { popups, closePopup } = usePopup();

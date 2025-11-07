@@ -1,6 +1,6 @@
 import {CSSProperties, useCallback, useEffect} from "react";
 
-import styles from "./ApiLoader.module.scss";
+import styles from "@styles/components/ApiLoader.module.scss";
 
 
 const ANIMATION_DURATION_MS = 1500;

@@ -4,7 +4,7 @@ import {Button, Typography} from "@maxhub/max-ui";
 
 import cls from "@utils/cls";
 
-import styles from "./OnBoarding.module.scss";
+import styles from "@styles/components/OnBoarding.module.scss";
 
 interface OwnProps {
 	children: ReactNode | ReactNode[];

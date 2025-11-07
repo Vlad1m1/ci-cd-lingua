@@ -1,9 +1,9 @@
 import {useRef, useState, useEffect, useImperativeHandle, forwardRef} from "react";
 
 import animationData from "@assets/lottie/language.json";
-import ColoredLottie from "@components/ColoredLottie/ColoredLottie";
+import ColoredLottie from "@components/ColoredLottie";
 
-import styles from "./Loader.module.scss";
+import styles from "@styles/components/Loader.module.scss";
 
 import type { LottieRefCurrentProps } from "lottie-react";
 

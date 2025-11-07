@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import styles from "./DevNotifications.module.scss";
+import styles from "@styles/components/development/DevNotifications.module.scss";
 
 export interface DevNotification {
 	id: string;

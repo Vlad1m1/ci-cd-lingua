@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LevelButton.module.scss';
+import styles from '@styles/components/LevelButton.module.scss';
 
 interface LevelButtonProps {
   level?: number | string;
@@ -8,14 +8,14 @@ interface LevelButtonProps {
   children?: React.ReactNode;
 }
 
-export const LevelButton: React.FC<LevelButtonProps> = ({ 
-  level, 
-  color = 'green', 
+export const LevelButton: React.FC<LevelButtonProps> = ({
+  level,
+  color = 'green',
   onClick,
-  children 
+  children
 }) => {
   return (
-    <button 
+    <button
       className={`${styles.levelButton} ${styles[color]}`}
       onClick={onClick}
     >
