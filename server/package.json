@@ -6,7 +6,7 @@
     "start:dev": "NODE_ENV=development nodemon src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "NODE_ENV=production node dist/index.js",
-    "start:prod": "npm run build && NODE_ENV=production node dist/index.js",
+    "start:prod": "npm run build && npm run start",
     "generate:doc": "node scripts/generate-doc.js",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix"

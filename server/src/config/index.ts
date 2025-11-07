@@ -30,6 +30,7 @@ export const PORT = parseInt(rawPort, 10);
 if (Number.isNaN(PORT)) {
 	console.warn('[config] Invalid PORT value, fallback to 3000');
 }
+export const HOST = env('HOST', APP_ENV === 'production' ? '0.0.0.0' : 'localhost');
 export const LOG_LEVEL = env('LOG_LEVEL', APP_ENV === 'production' ? 'info' : 'debug');
 export const LOG_DIR = env('LOG_DIR', path.resolve(process.cwd(), 'logs'));
 export const TTS_MODEL = env('TTS_MODEL', 'onnx-community/Kokoro-82M-ONNX');
@@ -49,6 +50,7 @@ export const DUEL_WINNER_EXP = parseInt(env('DUEL_WINNER_EXP', '100'), 10);
 export const config = {
 	env: APP_ENV,
 	port: PORT,
+	host: HOST,
 	log: {
 		level: LOG_LEVEL,
 		dir: LOG_DIR,
