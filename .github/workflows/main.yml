@@ -33,7 +33,7 @@ jobs:
       - name: Connecting to server for DEPLOY THIS.
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker stop ghcr-frontend ghcr-backend"
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker rmi ghcr.io/vlad1m1/frontend:latest ghcr.io/vlad1m1/backend:latest"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker rmi --force ghcr.io/vlad1m1/frontend:latest ghcr.io/vlad1m1/backend:latest"
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker pull ghcr.io/vlad1m1/frontend:latest && docker pull ghcr.io/vlad1m1/backend:latest"
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker run -d --name ghcr-backend -p 3000:3000 ghcr.io/vlad1m1/backend"
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker run -d --name ghcr-frontend -p 80:80 ghcr.io/vlad1m1/backend"
