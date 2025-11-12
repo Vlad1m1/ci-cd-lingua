@@ -20,5 +20,6 @@ jobs:
 
       - name: Pushing containers
         run: |
-          docker push ghcr.io/vlad1m1/frontend:latest ghcr.io/vlad1m1/backend:latest
-    
+          docker push ghcr.io/vlad1m1/frontend:latest
+          docker push ghcr.io/vlad1m1/backend:latest
+  
