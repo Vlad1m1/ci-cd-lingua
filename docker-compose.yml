@@ -1,8 +1,11 @@
+version: '3.8'
+
 services:
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    images: ghcr.io/vlad1m1/frontend:latest
     ports:
       - "80:80"
     environment:
@@ -14,6 +17,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    images: ghcr.io/vlad1m1/backend:latest
     ports:
       - "3000:3000"
     env_file:
