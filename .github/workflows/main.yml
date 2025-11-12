@@ -1,0 +1,24 @@
+name: Build and push to github container registry docker containers
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        
+      - name: Building new containers
+        run: |
+          docker login --username vlad1m1 --password ${{ secrets.GHCR_TOKEN }} ghcr.io
+          docker compose build
+          docker tag postgres:15 ghcr.io/vlad1m1/postgres:latest
+
+      - name: Pushing containers
+        run: |
+          docker push ghcr.io/vlad1m1/frontend:latest ghcr.io/vlad1m1/backend:latest ghcr.io/vlad1m1/postgres:latest
+    
