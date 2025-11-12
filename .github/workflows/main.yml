@@ -17,7 +17,6 @@ jobs:
           docker login --username vlad1m1 --password ${{ secrets.GHCR_TOKEN }} ghcr.io
           docker compose build
           docker image ls
-          docker rename postgres:15 ghcr.io/vlad1m1/postgres:latest
 
       - name: Pushing containers
         run: |
